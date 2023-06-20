@@ -11,7 +11,7 @@ body {
     top: 0px;
     left: 0px;
     width: 30%;
-    height: 30%;
+    height: 25%;
     background-color: #32AF3E;
     border-bottom: 10px solid #D2B48C;
     border-right: 10px solid #D2B48C;
@@ -24,7 +24,7 @@ body {
     top: 0px;
     right: 0px;
     width: 30%;
-    height: 30%;
+    height: 25%;
     background-color: #32AF3E;
     border-bottom: 10px solid #D2B48C;
     border-left: 10px solid #D2B48C;
@@ -36,7 +36,7 @@ body {
     bottom: 0px;
     left: 0px;
     width: 30%;
-    height: 30%;
+    height: 25%;
     background-color: #32AF3E;
     border-top: 10px solid #D2B48C;
     border-right: 10px solid #D2B48C;
@@ -48,7 +48,7 @@ body {
     bottom: 0px;
     right: 0px;
     width: 30%;
-    height: 30%;
+    height: 25%;
     background-color: #32AF3E;
     border-top: 10px solid #D2B48C;
     border-left: 10px solid #D2B48C;
@@ -60,9 +60,80 @@ body {
   .intersection {  
     position: absolute;
     margin-left: 36%;
-    margin-top: 14.5%;
+    margin-top: 15.2%;
     width: 25%;
-    height: 34%;
+    height: 30%;
     background-color: #272727;
     border: 10px solid #D9D9D9;
   }
+
+
+  /* Top Road Divider */
+  .divider1 {  
+    position: absolute;
+    top: 0px;
+    left: 53%;
+    width: 1.2%;
+    height: 21.5%;
+    background-color: #32AF3E;
+    border-left: 5px solid #D2B48C;
+    border-right: 5px solid #D2B48C;
+    border-bottom: 5px solid #D2B48C;
+    border-bottom-left-radius: 6.5px;
+    border-bottom-right-radius: 6.5px;
+
+  }
+
+  /* Bottom Road Divider */
+  .divider2 {  
+    position: absolute;
+    bottom: 0px;
+    right: 53%;
+    width: 1.2%;
+    height: 21.5%;
+    background-color: #32AF3E;
+    border-left: 5px solid #D2B48C;
+    border-right: 5px solid #D2B48C;
+    border-top: 5px solid #D2B48C;
+    border-top-left-radius: 6.5px;
+    border-top-right-radius: 6.5px;
+  
+   }
+
+
+    /* Left Road Divider */
+    .divider3 {  
+      position: absolute;
+      bottom: 52%;
+      left: 0px;
+      width: 27%;
+      height: 2.2%;
+      background-color: #32AF3E;
+      border-bottom: 5px solid #D2B48C;
+      border-right: 5px solid #D2B48C;
+      border-top: 5px solid #D2B48C;
+      border-top-right-radius: 6.5px;
+      border-bottom-right-radius: 6.5px;
+      
+     }
+
+    /* Right Road Divider */
+    .divider4 {  
+      position: absolute;
+      top: 52%;
+      right: 0px;
+      width: 27%;
+      height: 2.2%;
+      background-color: #32AF3E;
+      border-bottom: 5px solid #D2B48C;
+      border-left: 5px solid #D2B48C;
+      border-top: 5px solid #D2B48C;
+      border-top-left-radius: 6.5px;
+      border-bottom-left-radius: 6.5px;
+          
+      }
+    
+
+
+
+
