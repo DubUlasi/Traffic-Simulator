@@ -1,0 +1,68 @@
+
+/* Background of the entire design */
+body {
+    background-color: #272727;
+}
+
+/* design of the 4 land corners of the road */
+
+.land1 {  /* Top left corner */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 30%;
+    height: 30%;
+    background-color: #32AF3E;
+    border-bottom: 10px solid #D2B48C;
+    border-right: 10px solid #D2B48C;
+    border-bottom-right-radius: 65px;
+
+  }
+
+  .land2 {  /* Top right corner */
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 30%;
+    height: 30%;
+    background-color: #32AF3E;
+    border-bottom: 10px solid #D2B48C;
+    border-left: 10px solid #D2B48C;
+    border-bottom-left-radius: 65px;
+  }
+  
+  .land3 {  /* bottom left corner */
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 30%;
+    height: 30%;
+    background-color: #32AF3E;
+    border-top: 10px solid #D2B48C;
+    border-right: 10px solid #D2B48C;
+    border-top-right-radius: 65px;
+  }
+
+  .land4 {  /* bottom right corner */
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 30%;
+    height: 30%;
+    background-color: #32AF3E;
+    border-top: 10px solid #D2B48C;
+    border-left: 10px solid #D2B48C;
+    border-top-left-radius: 65px;
+  }
+
+
+  /* design of the intersection box*/
+  .intersection {  
+    position: absolute;
+    margin-left: 36%;
+    margin-top: 14.5%;
+    width: 25%;
+    height: 34%;
+    background-color: #272727;
+    border: 10px solid #D9D9D9;
+  }
