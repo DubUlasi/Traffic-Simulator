@@ -1,518 +1,572 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Background of the entire design */
 body {
-    background-color: #272727;
+  background-color: #272727;
+}
+
+/* Rules for the wrapper enclosing the environment */
+#environment-wrapper {
+  height: 100vh;
+  width: 100vh;
+  margin: auto;
+  position: relative;
 }
 
 /* design of the 4 land corners of the road */
 
-.land1 {  /* Top left corner */
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 30%;
-    height: 25%;
-    background-color: #32AF3E;
-    border-bottom: 10px solid #D2B48C;
-    border-right: 10px solid #D2B48C;
-    border-bottom-right-radius: 65px;
+.land1 {
+  /* Top left corner */
+  /* position: fixed; */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* width: 30%; */
+  width: 20%;
+  height: 25%;
+  background-color: #32AF3E;
+  border-bottom: 10px solid #D2B48C;
+  border-right: 10px solid #D2B48C;
+  border-bottom-right-radius: 65px;
 
-  }
+}
 
-  .land2 {  /* Top right corner */
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 30%;
-    height: 25%;
-    background-color: #32AF3E;
-    border-bottom: 10px solid #D2B48C;
-    border-left: 10px solid #D2B48C;
-    border-bottom-left-radius: 65px;
-  }
-  
-  .land3 {  /* bottom left corner */
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 30%;
-    height: 25%;
-    background-color: #32AF3E;
-    border-top: 10px solid #D2B48C;
-    border-right: 10px solid #D2B48C;
-    border-top-right-radius: 65px;
-  }
+.land2 {
+  /* Top right corner */
+  /* position: fixed; */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  /* width: 30%; */
+  width: 20%;
+  height: 25%;
+  background-color: #32AF3E;
+  border-bottom: 10px solid #D2B48C;
+  border-left: 10px solid #D2B48C;
+  border-bottom-left-radius: 65px;
+}
 
-  .land4 {  /* bottom right corner */
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    width: 30%;
-    height: 25%;
-    background-color: #32AF3E;
-    border-top: 10px solid #D2B48C;
-    border-left: 10px solid #D2B48C;
-    border-top-left-radius: 65px;
-  }
+.land3 {
+  /* bottom left corner */
+  /* position: fixed; */
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  /* width: 30%; */
+  width: 20%;
+  height: 25%;
+  background-color: #32AF3E;
+  border-top: 10px solid #D2B48C;
+  border-right: 10px solid #D2B48C;
+  border-top-right-radius: 65px;
+}
 
-
-  /* design of the intersection box*/
-  .intersection {  
-    position: absolute;
-    margin-left: 36%;
-    margin-top: 15.2%;
-    width: 25%;
-    height: 30%;
-    background-color: #272727;
-    border: 10px solid #D9D9D9;
-  }
-
-
-  /* Top Road Divider */
-  .divider1 {  
-    position: absolute;
-    top: 0px;
-    left: 53%;
-    width: 1.2%;
-    height: 21.5%;
-    background-color: #32AF3E;
-    border-left: 5px solid #D2B48C;
-    border-right: 5px solid #D2B48C;
-    border-bottom: 5px solid #D2B48C;
-    border-bottom-left-radius: 6.5px;
-    border-bottom-right-radius: 6.5px;
-
-  }
-
-  /* Bottom Road Divider */
-  .divider2 {  
-    position: absolute;
-    bottom: 0px;
-    right: 53%;
-    width: 1.2%;
-    height: 21.5%;
-    background-color: #32AF3E;
-    border-left: 5px solid #D2B48C;
-    border-right: 5px solid #D2B48C;
-    border-top: 5px solid #D2B48C;
-    border-top-left-radius: 6.5px;
-    border-top-right-radius: 6.5px;
-  
-   }
+.land4 {
+  /* bottom right corner */
+  /* position: fixed; */
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  /* width: 30%; */
+  width: 20%;
+  height: 25%;
+  background-color: #32AF3E;
+  border-top: 10px solid #D2B48C;
+  border-left: 10px solid #D2B48C;
+  border-top-left-radius: 65px;
+}
 
 
-    /* Left Road Divider */
-    .divider3 {  
-      position: absolute;
-      bottom: 52%;
-      left: 0px;
-      width: 27%;
-      height: 2.2%;
-      background-color: #32AF3E;
-      border-bottom: 5px solid #D2B48C;
-      border-right: 5px solid #D2B48C;
-      border-top: 5px solid #D2B48C;
-      border-top-right-radius: 6.5px;
-      border-bottom-right-radius: 6.5px;
-      
-     }
-
-    /* Right Road Divider */
-    .divider4 {  
-      position: absolute;
-      top: 52%;
-      right: 0px;
-      width: 27%;
-      height: 2.2%;
-      background-color: #32AF3E;
-      border-bottom: 5px solid #D2B48C;
-      border-left: 5px solid #D2B48C;
-      border-top: 5px solid #D2B48C;
-      border-top-left-radius: 6.5px;
-      border-bottom-left-radius: 6.5px;
-          
-      }
+/* design of the intersection box*/
+.intersection {
+  position: absolute;
+  /* margin-left: 36%; */
+  /* margin-top: 15.2%; */
+  /* width: 25%; */
+  top: 35%;
+  left: 35%;
+  width: 30%;
+  height: 30%;
+  background-color: #272727;
+  border: 10px solid #D9D9D9;
+}
 
 
+/* Top Road Divider */
+.divider1 {
+  position: absolute;
+  top: 0px;
+  left: 53%;
+  width: 2%;
+  height: 21.5%;
+  background-color: #32AF3E;
+  border-left: 5px solid #D2B48C;
+  border-right: 5px solid #D2B48C;
+  border-bottom: 5px solid #D2B48C;
+  border-bottom-left-radius: 6.5px;
+  border-bottom-right-radius: 6.5px;
 
-      /* Broken lines for the first section of the left side road */
-    .left-road-line1 {
-      position: absolute;
-      bottom: 63.7%;
-      left: 1.5%;
-      width: 3%;
-      height: 1.5%;
-      background-color: #D9D9D9;
-    }
+}
 
-    .left-road-line2 {
-      position: absolute;
-      bottom: 63.7%;
-      left: 7.3%;
-      width: 3%;
-      height: 1.5%;
-      background-color: #D9D9D9;
-    }
+/* Bottom Road Divider */
+.divider2 {
+  position: absolute;
+  bottom: 0px;
+  right: 53%;
+  width: 1.2%;
+  height: 21.5%;
+  background-color: #32AF3E;
+  border-left: 5px solid #D2B48C;
+  border-right: 5px solid #D2B48C;
+  border-top: 5px solid #D2B48C;
+  border-top-left-radius: 6.5px;
+  border-top-right-radius: 6.5px;
 
-    .left-road-line3 {
-    position: absolute;
-    bottom: 63.7%;
-    left: 13.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  
-  .left-road-line4 {
-    position: absolute;
-    bottom: 63.7%;
-    left: 19.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+}
 
 
-   /* Broken lines for the second section of the left side road */
-  .left-road-line5 {
-    position: absolute;
-    bottom: 43%;
-    left: 19.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+/* Left Road Divider */
+.divider3 {
+  position: absolute;
+  bottom: 52%;
+  left: 0px;
+  width: 27%;
+  height: 2.2%;
+  background-color: #32AF3E;
+  border-bottom: 5px solid #D2B48C;
+  border-right: 5px solid #D2B48C;
+  border-top: 5px solid #D2B48C;
+  border-top-right-radius: 6.5px;
+  border-bottom-right-radius: 6.5px;
 
-  .left-road-line6 {
-    position: absolute;
-    bottom: 43%;
-    left: 13.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+}
 
-  .left-road-line7 {
-    position: absolute;
-    bottom: 43%;
-    left: 7.3%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+/* Right Road Divider */
+.divider4 {
+  position: absolute;
+  top: 52%;
+  right: 0px;
+  width: 27%;
+  height: 2.2%;
+  background-color: #32AF3E;
+  border-bottom: 5px solid #D2B48C;
+  border-left: 5px solid #D2B48C;
+  border-top: 5px solid #D2B48C;
+  border-top-left-radius: 6.5px;
+  border-bottom-left-radius: 6.5px;
 
-  .left-road-line8 {
-    position: absolute;
-    bottom: 43%;
-    left: 1.5%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .left-road-line9 {
-    position: absolute;
-    bottom: 34%;
-    left: 19.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .left-road-line10 {
-    position: absolute;
-    bottom: 34%;
-    left: 13.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .left-road-line11 {
-    position: absolute;
-    bottom: 34%;
-    left: 7.3%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .left-road-line12 {
-    position: absolute;
-    bottom: 34%;
-    left: 1.5%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+}
 
 
 
-  /* Broken lines for the first section of the right side road */
-  .right-road-line1 {
-    position: absolute;
-    bottom: 64.3%;
-    right: 1.5%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-  
-  .right-road-line2 {
-    position: absolute;
-    bottom: 64.3%;
-    right: 7.3%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-  
-  .right-road-line3 {
-    position: absolute;
-    bottom: 64.3%;
-    right: 13.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-  
-    
-  .right-road-line4 {
-    position: absolute;
-    bottom: 64.3%;
-    right: 19.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+/* Broken lines for the first section of the left side road */
+.left-road-line1 {
+  position: absolute;
+  bottom: 63.7%;
+  left: 1.5%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .right-road-line5 {
-    position: absolute;
-    bottom: 55.7%;
-    right: 19.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line2 {
+  position: absolute;
+  bottom: 63.7%;
+  left: 7.3%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .right-road-line6 {
-    position: absolute;
-    bottom: 55.7%;
-    right: 13.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .right-road-line7 {
-    position: absolute;
-    bottom: 55.7%;
-    right: 7.3%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .right-road-line8 {
-    position: absolute;
-    bottom: 55.7%;
-    right: 1.5%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line3 {
+  position: absolute;
+  bottom: 63.7%;
+  left: 13.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
 
-  /* Broken lines for the second section of the right side road */
-
-  .right-road-line9 {
-    position: absolute;
-    bottom: 35%;
-    right: 19.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .right-road-line10 {
-    position: absolute;
-    bottom: 35%;
-    right: 13.15%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .right-road-line11 {
-    position: absolute;
-    bottom: 35%;
-    right: 7.3%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
-
-  .right-road-line12 {
-    position: absolute;
-    bottom: 35%;
-    right: 1.5%;
-    width: 3%;
-    height: 1.5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line4 {
+  position: absolute;
+  bottom: 63.7%;
+  left: 19.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
 
-  /* Broken lines for the first section of the top side road */
+/* Broken lines for the second section of the left side road */
+.left-road-line5 {
+  position: absolute;
+  bottom: 43%;
+  left: 19.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .top-road-line1 {
-    position: absolute;
-    top: 2%;
-    left: 35.7%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line6 {
+  position: absolute;
+  bottom: 43%;
+  left: 13.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .top-road-line2 {
-    position: absolute;
-    top: 2%;
-    left: 41.5%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line7 {
+  position: absolute;
+  bottom: 43%;
+  left: 7.3%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .top-road-line3 {
-    position: absolute;
-    top: 2%;
-    left: 47.15%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line8 {
+  position: absolute;
+  bottom: 43%;
+  left: 1.5%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .top-road-line4 {
-    position: absolute;
-    top: 12%;
-    left: 35.7%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line9 {
+  position: absolute;
+  bottom: 34%;
+  left: 19.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .top-road-line5 {
-    position: absolute;
-    top: 12%;
-    left: 41.5%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line10 {
+  position: absolute;
+  bottom: 34%;
+  left: 13.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .top-road-line6 {
-    position: absolute;
-    top: 12%;
-    left: 47.15%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
+.left-road-line11 {
+  position: absolute;
+  bottom: 34%;
+  left: 7.3%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  /* Broken lines for the second section of the top side road */
+.left-road-line12 {
+  position: absolute;
+  bottom: 34%;
+  left: 1.5%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-  .top-road-line7 {
-    position: absolute;
-    top: 2%;
-    left: 61.5%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
 
-  .top-road-line8 {
-    position: absolute;
-    top: 12%;
-    left: 61.5%;
-    width: 0.75%;
-    height: 5%;
-    background-color: #D9D9D9;
-  }
 
-    /* Broken lines for the first section of the bottom side road */
+/* Broken lines for the first section of the right side road */
+.right-road-line1 {
+  position: absolute;
+  bottom: 64.3%;
+  right: 1.5%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-    .bottom-road-line1 {
-      position: absolute;
-      bottom: 2%;
-      right: 61.8%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
-  
-    .bottom-road-line2 {
-      position: absolute;
-      bottom: 12%;
-      right: 61.8%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
+.right-road-line2 {
+  position: absolute;
+  bottom: 64.3%;
+  right: 7.3%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-    /* Broken lines for the second section of the top side road */
+.right-road-line3 {
+  position: absolute;
+  bottom: 64.3%;
+  right: 13.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
 
-    .bottom-road-line3{
-      position: absolute;
-      bottom: 2%;
-      right: 35.7%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
-  
-    .bottom-road-line4 {
-      position: absolute;
-      bottom: 2%;
-      right: 41.5%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
-  
-    .bottom-road-line5 {
-      position: absolute;
-      bottom: 2%;
-      right: 47.15%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
-  
-    .bottom-road-line6 {
-      position: absolute;
-      bottom: 12%;
-      right: 35.7%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
-  
-    .bottom-road-line7 {
-      position: absolute;
-      bottom: 12%;
-      right: 41.5%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
-  
-    .bottom-road-line8 {
-      position: absolute;
-      bottom: 12%;
-      right: 47.15%;
-      width: 0.75%;
-      height: 5%;
-      background-color: #D9D9D9;
-    }
-  
-  
+
+.right-road-line4 {
+  position: absolute;
+  bottom: 64.3%;
+  right: 19.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+.right-road-line5 {
+  position: absolute;
+  bottom: 55.7%;
+  right: 19.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+.right-road-line6 {
+  position: absolute;
+  bottom: 55.7%;
+  right: 13.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+.right-road-line7 {
+  position: absolute;
+  bottom: 55.7%;
+  right: 7.3%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+.right-road-line8 {
+  position: absolute;
+  bottom: 55.7%;
+  right: 1.5%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+
+/* Broken lines for the second section of the right side road */
+
+.right-road-line9 {
+  position: absolute;
+  bottom: 35%;
+  right: 19.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+.right-road-line10 {
+  position: absolute;
+  bottom: 35%;
+  right: 13.15%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+.right-road-line11 {
+  position: absolute;
+  bottom: 35%;
+  right: 7.3%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+.right-road-line12 {
+  position: absolute;
+  bottom: 35%;
+  right: 1.5%;
+  width: 3%;
+  height: 1.5%;
+  background-color: #D9D9D9;
+}
+
+
+/* Broken lines for the first section of the top side road */
+
+.top-road-line1 {
+  position: absolute;
+  top: 2%;
+  /* left: 35.7%; */
+  left: 29%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line2 {
+  position: absolute;
+  top: 2%;
+  /* left: 41.5%; */
+  left: 37%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line3 {
+  position: absolute;
+  top: 2%;
+  /* left: 47.15%; */
+  left: 44.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line4 {
+  position: absolute;
+  top: 12%;
+  /* left: 35.7%; */
+  left: 29%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line5 {
+  position: absolute;
+  top: 12%;
+  /* left: 41.5%; */
+  left: 37%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line6 {
+  position: absolute;
+  top: 12%;
+  /* left: 47.15%; */
+  left: 44.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+/* Broken lines for the second section of the top side road */
+
+.top-road-line7 {
+  position: absolute;
+  top: 2%;
+  /* left: 61.5%; */
+  left: 62.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line8 {
+  position: absolute;
+  top: 12%;
+  /* left: 61.5%; */
+  left: 62.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line9 {
+  position: absolute;
+  top: 2%;
+  /* left: 61.5%; */
+  left: 70.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.top-road-line10 {
+  position: absolute;
+  top: 12%;
+  /* left: 61.5%; */
+  left: 70.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+/* Broken lines for the first section of the bottom side road */
+
+.bottom-road-line1 {
+  position: absolute;
+  bottom: 2%;
+  right: 61.8%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line2 {
+  position: absolute;
+  bottom: 12%;
+  right: 61.8%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+/* Broken lines for the second section of the top side road */
+
+.bottom-road-line3 {
+  position: absolute;
+  bottom: 2%;
+  right: 35.7%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line4 {
+  position: absolute;
+  bottom: 2%;
+  right: 41.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line5 {
+  position: absolute;
+  bottom: 2%;
+  right: 47.15%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line6 {
+  position: absolute;
+  bottom: 12%;
+  right: 35.7%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line7 {
+  position: absolute;
+  bottom: 12%;
+  right: 41.5%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line8 {
+  position: absolute;
+  bottom: 12%;
+  right: 47.15%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
