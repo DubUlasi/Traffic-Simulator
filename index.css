@@ -27,7 +27,7 @@ body {
   left: 0px;
   /* width: 30%; */
   width: 20%;
-  height: 25%;
+  height: 27.5%;
   background-color: #32AF3E;
   border-bottom: 10px solid #D2B48C;
   border-right: 10px solid #D2B48C;
@@ -43,7 +43,7 @@ body {
   right: 0px;
   /* width: 30%; */
   width: 20%;
-  height: 25%;
+  height: 27.5%;
   background-color: #32AF3E;
   border-bottom: 10px solid #D2B48C;
   border-left: 10px solid #D2B48C;
@@ -58,7 +58,7 @@ body {
   left: 0px;
   /* width: 30%; */
   width: 20%;
-  height: 25%;
+  height: 27.5%;
   background-color: #32AF3E;
   border-top: 10px solid #D2B48C;
   border-right: 10px solid #D2B48C;
@@ -73,7 +73,7 @@ body {
   right: 0px;
   /* width: 30%; */
   width: 20%;
-  height: 25%;
+  height: 27.5%;
   background-color: #32AF3E;
   border-top: 10px solid #D2B48C;
   border-left: 10px solid #D2B48C;
@@ -87,10 +87,10 @@ body {
   /* margin-left: 36%; */
   /* margin-top: 15.2%; */
   /* width: 25%; */
-  top: 35%;
-  left: 35%;
-  width: 30%;
-  height: 30%;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  height: 40%;
   background-color: #272727;
   border: 10px solid #D9D9D9;
 }
@@ -102,7 +102,7 @@ body {
   top: 0px;
   left: 53%;
   width: 2%;
-  height: 21.5%;
+  height: 25%;
   background-color: #32AF3E;
   border-left: 5px solid #D2B48C;
   border-right: 5px solid #D2B48C;
@@ -116,9 +116,10 @@ body {
 .divider2 {
   position: absolute;
   bottom: 0px;
-  right: 53%;
-  width: 1.2%;
-  height: 21.5%;
+  /* right: 53%; */
+  left: 46%;
+  width: 2%;
+  height: 25%;
   background-color: #32AF3E;
   border-left: 5px solid #D2B48C;
   border-right: 5px solid #D2B48C;
@@ -500,7 +501,8 @@ body {
 .bottom-road-line1 {
   position: absolute;
   bottom: 2%;
-  right: 61.8%;
+  /* right: 61.8%; */
+  left: 29%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
@@ -509,18 +511,18 @@ body {
 .bottom-road-line2 {
   position: absolute;
   bottom: 12%;
-  right: 61.8%;
+  /* right: 61.8%; */
+  left: 29%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
 }
 
-/* Broken lines for the second section of the top side road */
-
 .bottom-road-line3 {
   position: absolute;
   bottom: 2%;
-  right: 35.7%;
+  /* right: 61.8%; */
+  left: 37%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
@@ -528,17 +530,21 @@ body {
 
 .bottom-road-line4 {
   position: absolute;
-  bottom: 2%;
-  right: 41.5%;
+  bottom: 12%;
+  /* right: 61.8%; */
+  left: 37%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
 }
 
+/* Broken lines for the second section of the top side road */
+
 .bottom-road-line5 {
   position: absolute;
   bottom: 2%;
-  right: 47.15%;
+  /* right: 35.7%; */
+  left: 55%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
@@ -546,8 +552,9 @@ body {
 
 .bottom-road-line6 {
   position: absolute;
-  bottom: 12%;
-  right: 35.7%;
+  bottom: 2%;
+  /* right: 41.5%; */
+  left: 63%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
@@ -555,8 +562,9 @@ body {
 
 .bottom-road-line7 {
   position: absolute;
-  bottom: 12%;
-  right: 41.5%;
+  bottom: 2%;
+  /* right: 47.15%; */
+  left: 71%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
@@ -565,7 +573,28 @@ body {
 .bottom-road-line8 {
   position: absolute;
   bottom: 12%;
-  right: 47.15%;
+  /* right: 35.7%; */
+  left: 55%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line9 {
+  position: absolute;
+  bottom: 12%;
+  /* right: 41.5%; */
+  left: 63%;
+  width: 0.75%;
+  height: 5%;
+  background-color: #D9D9D9;
+}
+
+.bottom-road-line10 {
+  position: absolute;
+  bottom: 12%;
+  /* right: 47.15%; */
+  left: 71%;
   width: 0.75%;
   height: 5%;
   background-color: #D9D9D9;
