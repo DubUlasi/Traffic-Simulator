@@ -4,10 +4,12 @@
   box-sizing: border-box;
 }
 
+
 /* Background of the entire design */
 body {
   background-color: #272727;
 }
+
 
 /* Rules for the wrapper enclosing the environment */
 #environment-wrapper {
@@ -17,8 +19,8 @@ body {
   position: relative;
 }
 
-/* design of the 4 land corners of the road */
 
+/* design of the 4 land corners of the road */
 .land1 {
   /* Top left corner */
   /* position: fixed; */
@@ -112,6 +114,7 @@ body {
 
 }
 
+
 /* Bottom Road Divider */
 .divider2 {
   position: absolute;
@@ -146,6 +149,7 @@ body {
 
 }
 
+
 /* Right Road Divider */
 .divider4 {
   position: absolute;
@@ -161,7 +165,6 @@ body {
   border-bottom-left-radius: 6.5px;
 
 }
-
 
 
 /* Broken lines for the first section of the left side road */
@@ -184,11 +187,29 @@ body {
 }
 
 
-
 /* Broken lines for the second section of the left side road */
-.left-road-line5 {
+.left-road-line3 {
   position: absolute;
   bottom: 43.7%;
+  left: 8%;
+  width: 5%;
+  height: 0.75%;
+  background-color: #D9D9D9;
+}
+
+.left-road-line4 {
+  position: absolute;
+  bottom: 43.7%;
+  left: 0px;
+  width: 3%;
+  height: 0.75%;
+  background-color: #D9D9D9;
+}
+
+
+.left-road-line5 {
+  position: absolute;
+  bottom: 34.7%;
   left: 8%;
   width: 5%;
   height: 0.75%;
@@ -197,33 +218,12 @@ body {
 
 .left-road-line6 {
   position: absolute;
-  bottom: 43.7%;
-  left: 0px;
-  width: 3%;
-  height: 0.75%;
-  background-color: #D9D9D9;
-}
-
-
-.left-road-line9 {
-  position: absolute;
-  bottom: 34.7%;
-  left: 8%;
-  width: 5%;
-  height: 0.75%;
-  background-color: #D9D9D9;
-}
-
-.left-road-line10 {
-  position: absolute;
   bottom: 34.7%;
   left: 0px;
   width: 3%;
   height: 0.75%;
   background-color: #D9D9D9;
 }
-
-
 
 
 /* Broken lines for the first section of the right side road */
@@ -245,7 +245,7 @@ body {
   background-color: #D9D9D9;
 }
 
-.right-road-line7 {
+.right-road-line3 {
   position: absolute;
   bottom: 55.7%;
   right: 8%;
@@ -254,7 +254,7 @@ body {
   background-color: #D9D9D9;
 }
 
-.right-road-line8 {
+.right-road-line4 {
   position: absolute;
   bottom: 55.7%;
   right: 0px;
@@ -265,7 +265,7 @@ body {
 
 
 /* Broken lines for the second section of the right side road */
-.right-road-line11 {
+.right-road-line5 {
   position: absolute;
   bottom: 36.4%;
   right: 8%;
@@ -274,7 +274,7 @@ body {
   background-color: #D9D9D9;
 }
 
-.right-road-line12 {
+.right-road-line6 {
   position: absolute;
   bottom: 36.4%;
   right: 0px;
@@ -346,8 +346,8 @@ body {
   background-color: #D9D9D9;
 }
 
-/* Broken lines for the second section of the top side road */
 
+/* Broken lines for the second section of the top side road */
 .top-road-line7 {
   position: absolute;
   top: 2%;
@@ -387,6 +387,7 @@ body {
   height: 5%;
   background-color: #D9D9D9;
 }
+
 
 /* Broken lines for the first section of the bottom side road */
 
@@ -429,6 +430,7 @@ body {
   height: 5%;
   background-color: #D9D9D9;
 }
+
 
 /* Broken lines for the second section of the top side road */
 
