@@ -2,42 +2,59 @@
 const RED_TEXT = 'red';
 const YELLOW_TEXT = 'yellow';
 const GREEN_TEXT = 'green';
-const trafficLightSchematic = function(element) {
-    this.element = element,
-    this.showRed = function(duration) {
-        displayLightAndCounter(duration, this.element, RED_TEXT);
-    },
-    this.showYellow = function(duration) {
-        displayLightAndCounter(duration, this.element, YELLOW_TEXT);
-    },
-    this.showGreen = function(duration) {
-        displayLightAndCounter(duration, this.element, GREEN_TEXT);
-    },
+const YELLOW_LIGHT_DURATION = 4;
+
+// Traffic Light Schematic Object
+const trafficLightSchematic = function(element, redDuration, greenDuration, yellowDuration = YELLOW_LIGHT_DURATION) {
+    this.redDuration = redDuration;
+    this.yellowDuration = yellowDuration;
+    this.greenDuration = greenDuration;
+    this.element = element;
+    this.showRed = function(duration = undefined) {
+        displayLightAndCounter(duration ?? this.redDuration, this.element, RED_TEXT);
+    };
+    this.showYellow = function(duration = undefined) {
+        displayLightAndCounter(duration ?? this.yellowDuration, this.element, YELLOW_TEXT);
+    };
+    this.showGreen = function(duration = undefined) {
+        displayLightAndCounter(duration ?? this.greenDuration, this.element, GREEN_TEXT);
+    };
+    this.runDisplay = function(redDuration, yellowDuration, greenDuration) {
+        this.showRed(redDuration);
+        setTimeout(() => this.showYellow(yellowDuration), (redDuration * 1000) + 500);
+        setTimeout(() => this.showGreen(greenDuration), ((redDuration + yellowDuration) * 1000) + 500);
+        setTimeout(() => this.showYellow(yellowDuration), ((redDuration + yellowDuration + greenDuration) * 1000) + 500);
+    };
     this.runDisplay = function() {
-        runTrafficSimulationFromObj(this);
-    }
+        this.showRed(this.redDuration);
+        setTimeout(() => this.showYellow(this.yellowDuration), (this.redDuration * 1000) + 500);
+        setTimeout(() => this.showGreen(this.greenDuration), ((this.redDuration + this.yellowDuration) * 1000) + 500);
+        setTimeout(() => this.showYellow(this.yellowDuration),
+            ((this.redDuration + this.yellowDuration + this.greenDuration) * 1000) + 500);
+    };
+    this.totalDuration = function () {
+        return this.redDuration + (this.yellowDuration * 2) + this.greenDuration;
+    };
 };
 
 // Traffic Light References
-const trafficLightA = new trafficLightSchematic(document.getElementById('traffic-1'));
-const trafficLightB = new trafficLightSchematic(document.getElementById('traffic-2'));
-const trafficLightC = new trafficLightSchematic(document.getElementById('traffic-3'));
-const trafficLightD = new trafficLightSchematic(document.getElementById('traffic-4'));
-                        
-// Elements References
-const traffic1LightElement = document.getElementById('traffic-1');
-const traffic2LightElement = document.getElementById('traffic-2');
-const traffic3LightElement = document.getElementById('traffic-3');
-const traffic4LightElement = document.getElementById('traffic-4');
+const trafficLightA = new trafficLightSchematic(
+    document.getElementById('traffic-1'), 100, 17);
+const trafficLightB = new trafficLightSchematic(
+    document.getElementById('traffic-2'), 98, 21);
+const trafficLightC = new trafficLightSchematic(
+    document.getElementById('traffic-3'), 100, 18);
+const trafficLightD = new trafficLightSchematic(
+    document.getElementById('traffic-4'), 95, 23);
 
 function enableLight(trafficLightElement, color) {
     const light = trafficLightElement.getElementsByClassName(`circle-${color}`)[0];
-    light.style.opacity = 1;
+    light.style.opacity = '1';
 }
 
 function disableLight(trafficLightElement, color) {
     const light = trafficLightElement.getElementsByClassName(`circle-${color}`)[0];
-    light.style.opacity = 0.1;
+    light.style.opacity = '0.1';
 }
 
 function displayCurrentCount(trafficElement, count, color) {
@@ -63,95 +80,67 @@ function displayLightAndCounter(time, element, text) {
     triggerLight(--duration, text);    
 }
 
-function displayLightAndCounterForCounterDuration(color, durationObj) {
-    let duration = 0;
-    let text = '';
-
-    switch(color) {
-        case RED_TEXT:
-            duration = durationObj.red;
-            text = RED_TEXT;
-            break;
-        case YELLOW_TEXT:
-            duration = durationObj.yellow;
-            text = YELLOW_TEXT;
-            break;
-        case GREEN_TEXT:
-            duration = durationObj.green;
-            text = GREEN_TEXT;
-            break;
-    }
-
-    function triggerLight(count, color) {
-        enableLight(durationObj.element, color);
-        if (count === 0) {
-            disableLight(durationObj.element, color);
-            return;
-        }
-        displayCurrentCount(durationObj.element, count, color);
-        count--;
-        setTimeout(() => triggerLight(count, color), 1000);
-    }
-
-    triggerLight(--duration, text);
+function simulateTrafficRhythm(trafficLightObj) {
+    trafficLightObj.runDisplay();
+    setInterval(() => trafficLightObj.runDisplay(), (trafficLightObj.totalDuration() * 1000) + 2000);
 }
 
-function runTrafficSimulation(trafficLightObj) {
-    function showLights(runCount) {
-        timeoutValue = 0;
-        switch (runCount) {
-            case 0:
-            case 4:
-                timeoutValue = trafficLightObj.red;
-                displayLightAndCounterForCounterDuration(RED_TEXT, trafficLightObj);
-                break;
-            case 1:
-            case 3:
-                timeoutValue = trafficLightObj.yellow;
-                displayLightAndCounterForCounterDuration(YELLOW_TEXT, trafficLightObj);
-                break;
-            case 2:
-                timeoutValue = trafficLightObj.green;
-                displayLightAndCounterForCounterDuration(GREEN_TEXT, trafficLightObj);
-                break;
-            default:
-                runCount = timeoutValue = 0;
-                break;
-        }
-        runCount++;
-        setTimeout(() => showLights(runCount), timeoutValue * 1000);
-    }
+// Start
+trafficLightA.showRed(6);
+trafficLightB.showRed((trafficLightA.yellowDuration * 2) + trafficLightA.greenDuration + 6);
+trafficLightC.showRed((trafficLightA.yellowDuration * 2) + trafficLightA.greenDuration +
+    (trafficLightB.yellowDuration * 2) + 20 + 7
+);
+trafficLightD.showRed((trafficLightA.yellowDuration * 2) + trafficLightA.greenDuration +
+    (trafficLightB.yellowDuration * 2) + 20 + (trafficLightC.yellowDuration * 2)
+    + 25 + 7
+);
 
-    showLights(0);
-}
+// Traffic Light A show yellow
+setTimeout(() => trafficLightA.showYellow(), 5700);
 
-function runTrafficSimulationFromObj(trafficLightObj) {
-    function showLights(runCount) {
-        timeoutValue = 0;
-        switch (runCount) {
-            case 0:
-            case 4:
-                timeoutValue = trafficLightObj.red;
-                trafficLightObj.showRed();
-                break;
-            case 1:
-            case 3:
-                timeoutValue = trafficLightObj.yellow;
-                trafficLightObj.showYellow();
-                break;
-            case 2:
-                timeoutValue = trafficLightObj.green;
-                trafficLightObj.showGreen();
-                break;
-            default:
-                runCount = timeoutValue = 0;
-                break;
-        }
-        runCount++;
-        setTimeout(() => showLights(runCount), timeoutValue * 1000);
-    }
+// Traffic Light A shows Green
+setTimeout(() => trafficLightA.showGreen(), (trafficLightA.yellowDuration * 1000) + 5200);
 
-    showLights(0);
-}
+setTimeout(() => trafficLightA.showYellow(),
+    ((trafficLightA.yellowDuration + trafficLightA.greenDuration) * 1000) + 5700);
 
-trafficLightA.showRed(10);
+setTimeout(() => {
+        simulateTrafficRhythm(trafficLightA);
+        trafficLightB.showYellow();
+    },
+    (((trafficLightA.yellowDuration * 2) + trafficLightA.greenDuration) * 1000) + 6200);
+
+setTimeout(() => trafficLightB.showGreen(20),
+    (((trafficLightA.yellowDuration * 3) + trafficLightA.greenDuration) * 1000) + 6450);
+
+setTimeout(() => trafficLightB.showYellow(),
+    (((trafficLightA.yellowDuration * 3) + trafficLightA.greenDuration + 20) * 1000) + 7200);
+
+setTimeout(() => {
+        trafficLightC.showYellow();
+        simulateTrafficRhythm(trafficLightB);
+    },
+    (((trafficLightA.yellowDuration * 4) + trafficLightA.greenDuration + 20) * 1000) + 7200);
+
+setTimeout(() => trafficLightC.showGreen(25),
+    (((trafficLightA.yellowDuration * 5) + trafficLightA.greenDuration + 20) * 1000) + 7200);
+
+setTimeout(() => trafficLightC.showYellow(),
+    (((trafficLightA.yellowDuration * 5) + trafficLightA.greenDuration + 20 + 25) * 1000) + 7200);
+
+setTimeout(() => {
+        trafficLightD.showYellow();
+        simulateTrafficRhythm(trafficLightC);
+    },
+    (((trafficLightA.yellowDuration * 6) + trafficLightA.greenDuration + 20 + 25) * 1000) + 7200);
+
+
+setTimeout(() => trafficLightD.showGreen(25),
+    (((trafficLightA.yellowDuration * 7) + trafficLightA.greenDuration + 20 + 25) * 1000) + 7700);
+
+setTimeout(() => trafficLightD.showYellow(),
+    (((trafficLightA.yellowDuration * 7) + trafficLightA.greenDuration + 20 + 25 + 25) * 1000) + 8700);
+
+setTimeout(() => simulateTrafficRhythm(trafficLightD),
+    (((trafficLightA.yellowDuration * 8) + trafficLightA.greenDuration + 20 + 25 + 25) * 1000) + 8700);
