@@ -1,20 +1,17 @@
 
 
 
-#road {
-    width: 100vw;
-    height: 100vh;
-    background-color: #808080;
-    position:fixed;
-  }
+
   
   #car {
-    width: 100px;
-    height: 50px;
-    position: absolute;
+    width: 10px;
+    height: 10px;
+    position:relative;
     top: 175px;
-    left: 250px;
     animation: carMove 15s linear infinite;
+  }
+  #car img{
+    width:50px;
   }
   #car2{
     margin-top: 25%;
@@ -22,27 +19,25 @@
     height: 50px;
     position: absolute;
     top: 175px;
-    left: 250px;
+    left: 50px;
     animation: carMove 17s linear infinite;
   }
 
   #car3{
     margin-left: 40%;
     width: 100px;
-    height: 50px;
-    position: absolute;
-    top: -50px;
-    left: 250px;
-    transition: top 2s;
+    height: 20px;
+    position: fixed;
+    top: -30px;
+    left: 50px;
     animation: carmovetop 10s linear infinite;
   }
   
   @keyframes carmovetop{
     0%{top:0;}
     100%{top:100vw}
-    300%{top:0;}
+    400%{top:10;}
   }
-
 
   
   @keyframes carMove {
