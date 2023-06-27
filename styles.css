@@ -40,9 +40,4 @@
   }
 
   
-  @keyframes carMove {
-    0% { left: 0; }
-    100% { left: 100vw; }
-    300% { left: 0; }
-  }
-  
+ 
