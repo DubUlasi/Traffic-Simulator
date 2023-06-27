@@ -227,6 +227,7 @@
   width:100px;
 }
 
+
 @keyframes moveright{
   0% {
      right: 0; }
@@ -248,19 +249,38 @@
   16%{
     right:16%;
     transform:rotate(5deg);
-    
-    top:-160vw
+    top:-160vw;
   } 
   18%{
     right:18%;
     transform:rotate(10deg);
-    top:-18vw
+    top:-160vw;
   } 
   20%{
     right:20%;
-    transform:rotate(15deg) ;
-    top:-20vw
-  }
+    transform:rotate(15deg);
+    top:-160vw;
+  } 
+  22%{
+    right:22%;
+    transform:rotate(20deg);
+    top:-160vw;
+  } 
+  24%{
+    right:22%;
+    transform:rotate(25deg);
+    top:-160vw;
+  } 
+  26%{
+    right:26%;
+    transform:rotate(30deg);
+    top:-160vw;
+  } 
+  24%{
+    right:24%;
+    transform:rotate(35deg);
+    top:-160vw;
+  } 
   
  
 
