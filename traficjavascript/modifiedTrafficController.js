@@ -285,3 +285,4 @@ setTimeout(() => simulateTrafficRhythm(trafficLightD),
     (((trafficLightA.yellowDuration * 8) + trafficLightA.greenDuration + 20 + 25 + 25) * 1000) + 8700
 );
 
+
