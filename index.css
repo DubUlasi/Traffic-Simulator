@@ -271,17 +271,17 @@
     right:15%;
   }
   16%{
-    transform: rotate(65deg);
+    transform: rotate(60deg);
     top:23.9%;
     right:16%;
   }
   17%{
-    transform: rotate(70deg);
+    transform: rotate(66deg);
     top:23.5%;
     right:17%;
   }
   18%{
-    transform: rotate(85deg);
+    transform: rotate(80deg);
     top:23.1%;
     right:18%;
   }
@@ -291,15 +291,90 @@
     right:19%;
   }
  
-
-  
 }
 
+#car6{
+  margin-top:-23%;
+  margin-left:23%;
+  position:absolute;
+  animation: moveleft 10s ease-in infinite;
+}
+#car6 img{
+  width:40px;
+}
+
+@keyframes moveleft {
+ 
+
+  0% {
+    top: 0; }
+ 10% {
+    top: 10%; }
+ 12% { 
+    top: 12%;}
+ 14% {
+  top: 14%;}
+ 16% { 
+  top: 16%;}
+ 18% {
+    top:18%;}
+ 20% {
+    top:20%;}
+ 22% {
+    top:22%;}
+ 24% {
+    top:24%;}
+ 26% {
+    top:26%;}
+ 28% {
+    top:28%;}
+ 30% {
+    top:30%;}
+ 32% {
+    top:32%;}
+ 34% {
+    top:34%;}
+ 36% {
+    top:36%;}
+ 38% {
+    top:38%;}
+ 40% {
+    transform:rotate(5deg);
+    top:40%;}
+ 42% {
+    transform:rotate(10deg);
+    top:42%;}
+ 44% {
+    transform:rotate(15deg);
+    top:44%;}
+ 46% {
+    transform:rotate(25deg);
+    top:46%;}
+ 48% {
+    transform:rotate(30deg);
+   
+    top:46%;}
+ 50% {
+    transform:rotate(35deg);
+
+    top:46%;}
+ 60% {
+    transform:rotate(40deg);
+ 
+    top:46%;}
+ 70% {
+    transform:rotate(45deg);
+    
+    top:46%;}
+ 70% {
+    transform:rotate(50deg);
+    
+    top:46%;}
 
 
+   
 
-
-
+}
 
 
 
