@@ -138,6 +138,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  font-size: 20px;
 }
 .duration {
   position: absolute;
