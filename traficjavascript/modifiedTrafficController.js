@@ -12,29 +12,38 @@ const trafficLightSchematic = function(element, redDuration, greenDuration, yell
     this.element = element;
 
     // Method to show the red signal of the traffic light using nullish coalescing operator
+    // here the duration is set to undefined so that the value of the redDuration is used
     this.showRed = function(duration = undefined) {
         displayLightAndCounter(duration ?? this.redDuration, this.element, RED_TEXT);
     };
 
     // Method to show the yellow signal of the traffic light using nullish coalescing operator
+    // here the duration is set to undefined so that the value of the yellowDuration is used
     this.showYellow = function(duration = undefined) {
         displayLightAndCounter(duration ?? this.yellowDuration, this.element, YELLOW_TEXT);
     };
 
     // Method to show the green signal of the traffic light using nullish coalescing operator
+    // here the duration is set to undefined so that the value of the greenDuration is used
     this.showGreen = function(duration = undefined) {
         displayLightAndCounter(duration ?? this.greenDuration, this.element, GREEN_TEXT);
     };
 
     // Method to run the display sequence of the traffic light with the three colors duration as parameters
+
     this.runDisplay = function(redDuration, yellowDuration, greenDuration) {
         this.showRed(redDuration);
+        // here i am just creating a delay before the show light is displayed 
+        //by calculating the time it takes for the redlight to show in milliseconds plus an extra 500 ms
         setTimeout(() => this.showYellow(yellowDuration), (redDuration * 1000) + 500);
+        //To display the green light the delay is calculated by the red plus the yellow durations and converted to milliseconds plus 500ms
         setTimeout(() => this.showGreen(greenDuration), ((redDuration + yellowDuration) * 1000) + 500);
+        //to display the yellow light 
         setTimeout(() => this.showYellow(yellowDuration), ((redDuration + yellowDuration + greenDuration) * 1000) + 500);
     };
 
-    // Overloaded method to run the default display sequence of the traffic light
+    // Overloaded method to run the default display of the function 
+    // it assumes that the runDisplay function already has the parameters already from the traffic light duration.
     this.runDisplay = function() {
         this.showRed(this.redDuration);
         setTimeout(() => this.showYellow(this.yellowDuration), (this.redDuration * 1000) + 500);
@@ -56,6 +65,7 @@ const trafficLightSchematic = function(element, redDuration, greenDuration, yell
  * the numbers reppresents the duration of the red and green lights respectively. 
  * so the lights onl switch when the seconds for each light ended.
  * overall they just specify the traffic lights durations while being used in the trafficLightSchematic object
+ * this are the new traffic lights object of the trafficLightSchematic
  */
 const trafficLightA = new trafficLightSchematic(
     document.getElementById('traffic-1'), 100, 17);
@@ -66,7 +76,8 @@ const trafficLightC = new trafficLightSchematic(
 const trafficLightD = new trafficLightSchematic(
     document.getElementById('traffic-4'), 95, 23);
 
-/*function to enable the light color of any of the element in the traffic light container.
+/**
+ * function to enable the light color of any of the element in the traffic light container.
  * @param {HTMLCollection} trafficLightElement - The three lights(circles) in the traffic light container
  * @param {HTMLCollection} colors - The three colors
  * here we just set the opacity to 1.
@@ -79,9 +90,10 @@ function enableLight(trafficLightElement, color) {
     light.style.opacity = '1';
 }
 
-/*function to disable the light color of any of the element in the traffic light container
+/**
+ * function to disable the light color of any of the element in the traffic light container
  * @param {HTMLCollection} trafficLightElement - The three lights(circles) in the traffic light container
- * @param {HTMLCollection} colors - The three colors
+ * @param {HTMLCollection} color - The three colors
  * here we just reduced the opacity of the element to 0.1.
  */
 function disableLight(trafficLightElement, color) {
@@ -90,10 +102,12 @@ function disableLight(trafficLightElement, color) {
     // set opacity to 0.1
     light.style.opacity = '0.1';
 }
-/*The displayCurrentCount function is responsible for updating the display of the counter associated with a specific traffic light element
+
+/**
+ * The displayCurrentCount function is responsible for updating the display of the counter associated with a specific traffic light element
  * @param {HTMLCollection} trafficLightElement - The three lights(circles) in the traffic light container
- * @param {HTMLCollection} count - This parameter holds the value that should be displayed as the current count on the counter.
- * @param {HTMLCollection} color - his parameter determines the color of the counter text.
+ * @param {HTMLCollection} count - This parameter holds the value that should be displayed on the counter-bar
+ * @param {HTMLCollection} color - This parameter determines the color of the counter text.
  */
 
 function displayCurrentCount(trafficElement, count, color) {
@@ -102,38 +116,42 @@ function displayCurrentCount(trafficElement, count, color) {
     counter.style.color = color;
 }
 
-/* The displayLightAndCounter function is responsible for displaying the light and updating the counter associated with a specific traffic light element.
+/**
+ * The displayLightAndCounter function is responsible for displaying the light and updating the counter associated with a specific traffic light element.
  * @param Time - The duration of the light or the number of seconds it should be displayed.
- * @param {HTMLCollection} element - The traffic light element to which the light and counter belong.
+ * @param {HTMLCollection} element - The traffic light element to which the light belong.
  * @param {HTMLCollection} text - the constant colors of the light (e.g., 'red', 'yellow', or 'green')
  * triggerLight(--duration, text) -this function
  */
 function displayLightAndCounter(time, element, text) {
     //initialize a local variable called duration with the value of time.
     let duration = time;
-    
-/* The triggerLight function is an example of a nested function.
- * It continually triggers the light and updates the counter until the count reaches 0.
- * @param count - The duration of the light or the number of seconds it should be displayed.
- * @param {HTMLCollection} count- it represents the countdown of the number that is displayed on the counter-bar
- * @param {HTMLCollection} color- the constant colors of the light (e.g., 'red', 'yellow', or 'green')
- * enableLight(element, color);
- * disableLight(element, color);
- * displayCurrentCount(element, count, color);
- * setTimeout(() => triggerLight(count, color), 1000)
- */
+        
+    /**
+     * The triggerLight function is an example of a nested function.
+     * It continually triggers the light and updates the counter until the count reaches 0.
+     * @param count - The duration of the light or the number of seconds it should be displayed.
+     * @param {HTMLCollection} count- it represents the countdown of the number that is displayed on the counter-bar
+     * @param {HTMLCollection} color- the constant colors of the light (e.g., 'red', 'yellow', or 'green')
+     * enableLight(element, color);
+     * disableLight(element, color);
+     * displayCurrentCount(element, count, color);
+     * setTimeout(() => triggerLight(count, color), 1000)
+     */
     function triggerLight(count, color) {
-        //This line calls the enableLight function, which increases the opacity of the element for the color thst is given in the parameter
+        //This line calls the enableLight function, which increases the opacity of the element for the color that is given in the parameter
         enableLight(element, color);
         if (count === 0) {
             // here it just says if the count is 0 then call the disable light function with its parameters assigned
             disableLight(element, color);
             return;
         }
+
         //This line calls the displayCurrentCount function 
         //to update the counter associated with the element using the provided count and color values.
         displayCurrentCount(element, count, color);
         count--;// this count just continually decrement the count variable by 1 for the iteration
+
         // This method assigns the next iteration of the triggerLight function after a 1-second delay(1000ms) using the set timeout method
         //It does this by continously calling count and color updated values. 
         setTimeout(() => triggerLight(count, color), 1000);
@@ -141,7 +159,12 @@ function displayLightAndCounter(time, element, text) {
     // Now we call the function in the displayLightAndCounter function
     triggerLight(--duration, text);    
 }
-// The simulateTrafficRhythm function is responsible for simulating the rhythm of the traffic light changes.
+
+// 
+/**
+ * simulateTrafficRhythm function is responsible for simulating the rhythm of the traffic light changes.
+ * @param {object} trafficLightObj - instance of the trafficLightSemantic object 
+ */
 function simulateTrafficRhythm(trafficLightObj) {
     // This line immediately triggers the initial display of the traffic light according to its predefined timings.
     trafficLightObj.runDisplay();
@@ -153,14 +176,17 @@ function simulateTrafficRhythm(trafficLightObj) {
 // Start
 //This line initiates trafficLightA by showing the red signal for a duration of 6 seconds.
 trafficLightA.showRed(6);
+
 //trafficLightB would show red for a total of yellow-duration of trafficlightA multiplied by 2 plus the green-light duration plus 6
 trafficLightB.showRed((trafficLightA.yellowDuration * 2) + trafficLightA.greenDuration + 6);
+
 /*trafficLightC showing red method would now involve the durations of trafficLightA's yellow and green lights 
 *as well as the duration of trafficlightB yellowsduration multiplied by 2 plus 20 plus 7. 
 */
 trafficLightC.showRed((trafficLightA.yellowDuration * 2) + trafficLightA.greenDuration +
     (trafficLightB.yellowDuration * 2) + 20 + 7
 );
+
 /*trafficLightD showing red method would now involve the durations of trafficLightA's yellow and green lights plus 
 *trafficLightB yellows duration multiplied by 2 plus 20 plus trafficLightC's yellow duration *2  plus 25 plus 7
 as well as the duration of trafficlightB yellowsduration multiplied by 2 plus 
@@ -193,11 +219,13 @@ trafficLightD.showRed((trafficLightA.yellowDuration * 2) + trafficLightA.greenDu
 
 // Traffic Light A show yellow
 // Set a timer to change trafficLightA to a yellow signal after 5.7 seconds
+
 setTimeout(() => trafficLightA.showYellow(), 5700);
 
 // Traffic Light A shows Green
 // Set a timer to change trafficLightA to a green signal
 // The timer is based on the duration of its yellow signal and additional 5.2 seconds
+
 setTimeout(() => trafficLightA.showGreen(), (trafficLightA.yellowDuration * 1000) + 5200);
 
 // Set a timer to change trafficLightA back to yellow
@@ -249,7 +277,8 @@ setTimeout(() => trafficLightC.showGreen(25),
 
 // Set a timer to change trafficLightC back to yellow
 // The timer is based on the durations of five yellow signals from trafficLightA,
-// the duration of its green signal, 20 seconds, 25 seconds, and additional 7.2 seconds
+// the duration of its green signal, 20 seconds, 25 seconds, and additional 7.2 
+
 setTimeout(() => trafficLightC.showYellow(),
     (((trafficLightA.yellowDuration * 5) + trafficLightA.greenDuration + 20 + 25) * 1000) + 7200
 );
@@ -258,6 +287,7 @@ setTimeout(() => trafficLightC.showYellow(),
 // Invoke simulateTrafficRhythm for trafficLightC simultaneously
 // The timer is based on the durations of six yellow signals from trafficLightA,
 // the duration of its green signal, 20 seconds, 25 seconds, and additional 7.2 seconds
+
 setTimeout(() => {
     trafficLightD.showYellow();
     simulateTrafficRhythm(trafficLightC);
@@ -284,5 +314,37 @@ setTimeout(() => trafficLightD.showYellow(),
 setTimeout(() => simulateTrafficRhythm(trafficLightD),
     (((trafficLightA.yellowDuration * 8) + trafficLightA.greenDuration + 20 + 25 + 25) * 1000) + 8700
 );
+
+/**
+ * animateCar function helps move the car in a certain position based on the traffic light's position given
+ * @param {ObjectConstructorInstance} trafficLightObj 
+ */
+function animateCar(trafficLightObj, carId) {
+    const car = carId;
+    const trafficLight = trafficLightObj; // getting the traffic light that controls a certain area 
+  
+    const isGreen = trafficLight.querySelector('.circle-green').classList.contains('active');
+  
+    if (isGreen) {
+      // Apply the animation to the car
+      //car.style.animation = 'carAnimation 5s linear infinite'; 
+      function toAddKeyFrames( trafficLightObj, carId){
+        const keyFrames= [];
+        const cars= carId;
+        const carArrayforTrafficLightA= [];
+        carArrayforTrafficLightA.push(document.getElementById('car1'));
+        carArrayforTrafficLightA.push(document.getElementById('car2'));
+        carArrayforTrafficLightA.push(document.getElementById('car3'));
+    
+      }
+    } 
+    else {
+      // Stop the car animation
+      car.style.animation = 'none';
+    }
+  }
+
+ 
+  
 
 
