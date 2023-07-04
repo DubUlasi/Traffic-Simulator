@@ -4,19 +4,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Traffic Light</title>
-        <link rel="stylesheet" type="text/css" href="./trafficCss/traffic.css" />
+        <link rel="stylesheet" type="text/css" href="trafficCss/traffic.css" />
     </head>
     <body>
+        <!-- this is where i started creating the traffic lights -->
+        <!-- this parent-trafic-light is the container -->
         <div class="parent-traffic-light">
-            <div class="traffic-light">
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
+            <div class="traffic-light" id="traffic-1">
+                <div class="counter-bar"></div>
+                <div class="circle circle-red"></div>
+                <div class="circle circle-yellow"></div>
+                <div class="circle circle-green"></div>
+            </div>
+            <div class="traffic-light" id="traffic-2">
+                <div class="counter-bar"></div>
+                <div class="circle circle-red"></div>
+                <div class="circle circle-yellow"></div>
+                <div class="circle circle-green"></div>
+            </div>
+            <div class="traffic-light" id="traffic-3">
+                <div class="counter-bar"></div>
+                <div class="circle circle-red"></div>
+                <div class="circle circle-yellow"></div>
+                <div class="circle circle-green"></div>
+            </div>
+            <div class="traffic-light" id="traffic-4">
+                <div class="counter-bar"></div>
+                <div class="circle circle-red"></div>
+                <div class="circle circle-yellow"></div>
+                <div class="circle circle-green"></div>
             </div>
             <div class="parent-btn">
                 <button type="button" class="btn-run">Run</button>
             </div>
         </div>
-        <script type="text/javascript" src="./traficjavascript/traffic.js"></script>
+        
+        <!-- <script type="text/javascript" src="traficjavascript/traffic.js"></script> -->
+        <script type="text/javascript" src="traficjavascript/modifiedTrafficController.js"></script>
     </body>
 </html>

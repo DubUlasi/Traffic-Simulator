@@ -1,124 +1,147 @@
+/* this is the style of whole page 
+  i made the whole document a box shape
+*/
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+/* this div class .parent-traffic-light is the background of the whole screen  */
 .parent-traffic-light {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   background-color: #325d62;
 }
 
-.parent-traffic-light .traffic-light {
-  width: 70px;
-  height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+/* Traffic light container */
+.traffic-light {
+  width: 65px;
+  height: 140px;
+  justify-content: space-around;
+  align-items: center;
   border-radius: 15px;
   border: 1px solid #000000;
   background: linear-gradient(107deg, #555555 50%, #333333 50%);
+  z-index: 3;
+  position: fixed;
+}
+/* giving each traffic light its position on the road*/
+#traffic-1{
+  top: 7%;
+  left: 29%;
+  transform: rotate(360deg);
+  z-index: 3;
+}
+#traffic-2{
+  left: 66.9%;
+  top: 75%;
+  transform: rotate(360deg);
+  z-index: 3;
+}
+#traffic-3{
+  top: 11.9%;
+  left: 69.4%;
+  transform: rotate(270deg);
+  z-index: 2;
+}
+#traffic-4{
+  left: 26.7%;
+  top: 71%;
+  transform: rotate(90deg);
+  z-index: 2;
 }
 
-.parent-traffic-light .traffic-light .circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+/* Individual circles representing traffic light colors */
+ .traffic-light .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   background-color: #000000;
-  -webkit-box-shadow: 0 0 3px 0 #FFFFFF;
-          box-shadow: 0 0 3px 0 #FFFFFF;
+  box-shadow: 0 0 3px 0 #FFFFFF;
   position: relative;
+  opacity: 0.1;
+  margin: 5px auto 0px;
 }
 
-.parent-traffic-light .traffic-light .circle::before {
+/* Overlay on the circles */
+.traffic-light .circle::before {
   content: "";
-  width: 50%;
-  height: 40%;
   background-color: #FFFFFF;
   opacity: 0.2;
   position: absolute;
   border-radius: 50%;
   left: 50%;
   top: 20%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
-.parent-traffic-light .traffic-light .circle.green {
+/* Styling for the green circle */
+.traffic-light .circle-green {
   background-color: #00FF00;
-  -webkit-box-shadow: 0 0 15px 0 #6EFF6E;
-          box-shadow: 0 0 15px 0 #6EFF6E;
+  box-shadow: 0 0 15px 0 #6EFF6E;
+  margin-bottom: 10px;
 }
 
-.parent-traffic-light .traffic-light .circle.green::before {
-  content: none;
-}
-
-.parent-traffic-light .traffic-light .circle.yellow {
+/* Styling for the yellow circle */
+.traffic-light .circle-yellow {
   background-color: #FF8800;
-  -webkit-box-shadow: 0 0 15px 0 #FFDB6E;
-          box-shadow: 0 0 15px 0 #FFDB6E;
+  box-shadow: 0 0 15px 0 #FFDB6E;
 }
 
-.parent-traffic-light .traffic-light .circle.yellow::before {
-  content: none;
-}
-
-.parent-traffic-light .traffic-light .circle.red {
+/* Styling for the red circle */
+.traffic-light .circle-red {
   background-color: #FF0000;
-  -webkit-box-shadow: 0 0 15px 0 #FF6E6E;
-          box-shadow: 0 0 15px 0 #FF6E6E;
+  box-shadow: 0 0 15px 0 #FF6E6E;
 }
 
-.parent-traffic-light .traffic-light .circle.red::before {
-  content: none;
-}
-
+/* Parent container for the button */
 .parent-traffic-light .parent-btn {
   padding: 10px;
 }
 
+/* Styling for the button */
 .parent-traffic-light .parent-btn .btn-run {
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid #000000;
   background-color: #A0A0A0;
   cursor: pointer;
-  -webkit-transition: background-color 300ms linear;
   transition: background-color 300ms linear;
 }
 
+/* Hover state for the button */
 .parent-traffic-light .parent-btn .btn-run:hover {
   background-color: #5C5C5C;
   outline: none;
 }
 
-.parent-traffic-light .parent-btn .btn-run:active, .parent-traffic-light .parent-btn .btn-run:focus {
+/* Active and focus states for the button */
+.parent-traffic-light .parent-btn .btn-run:active,
+.parent-traffic-light .parent-btn .btn-run:focus {
   outline: none;
 }
+.counter-bar {
+  width: 100%;
+  height: 25px;
+  margin-bottom: 10px;
+  border-radius:10px 10px 0px 0px;
+  background: linear-gradient(#555555);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 20px;
+}
+.duration {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+

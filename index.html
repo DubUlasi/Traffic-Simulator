@@ -6,22 +6,30 @@
     <title>Traffic Simulator</title>
 
     <link rel="stylesheet" type="text/css" href="index.css">
-
+    <link rel="stylesheet" href="trafficCss/traffic.css">
 </head>
 <body>
-    <div id="environment-wrapper">
-    <button id="start">Start</button>
+  <div id="environment-wrapper">
 
-    
     <div class="land1"></div>
     <div class="land2"></div>
     <div class="land3"></div>
     <div class="land4"></div>
 
     
-
+    <div class="intersection">
+      <div class="intersectionline1"></div>
+      <div class="intersectionline2"></div>
+      <div class="intersectionline3"></div>
+      <div class="intersectionline4"></div>
+      <div class="intersectionline5"></div>
+      <div class="intersectionline6"></div>
+      <div class="intersectionline7"></div>
+      <div class="intersectionline8"></div>
+      <div class="intersectionline9"></div>
+      <div class="intersectionline10"></div>
+    </div>
     
-    <div class="intersection"></div>
 
     <div class="divider1"></div>
     <div class="divider2"></div>
@@ -34,6 +42,12 @@
       <div class="left-road-line1"></div>
       <div class="left-road-line2"></div>
       <div class="left-road-line3"></div>
+      <div class="traffic-light" id="traffic-4">
+        <div class="counter-bar"></div>
+        <div class="circle circle-red"></div>
+        <div class="circle circle-yellow"></div>
+        <div class="circle circle-green"></div>
+    </div>
       <div class="left-road-line4"></div>
       <div class="left-road-line5"></div>
       <div class="left-road-line6"></div>
@@ -63,6 +77,12 @@
     <div class="brokenlines-between-land2-and-land4">
       <div class="right-road-line1"></div>
       <div class="right-road-line2"></div>
+      <div class="traffic-light" id="traffic-3">
+        <div class="counter-bar"></div>
+        <div class="circle circle-red"></div>
+        <div class="circle circle-yellow"></div>
+        <div class="circle circle-green"></div>
+    </div>
       <div class="right-road-line3"></div>
       <div class="right-road-line4"></div>
       <div class="right-road-line5"></div>
@@ -72,6 +92,13 @@
 
 
     <div class="brokenlines-between-land1-and-land2">
+      <div class="traffic-light" id="traffic-1">
+        <div class="counter-bar"></div>
+        <div class="circle circle-red"></div>
+        <div class="circle circle-yellow"></div>
+        <div class="circle circle-green"></div>
+    </div>
+      
       <div class="top-road-line1"></div>
       <div class="top-road-line2"></div>
       <div class="top-road-line3"></div>
@@ -96,9 +123,15 @@
       <div class="bottom-road-line8"></div>
       <div class="bottom-road-line9"></div>
       <div class="bottom-road-line10"></div>
+      <div class="traffic-light" id="traffic-2">
+        <div class="counter-bar"></div>
+        <div class="circle circle-red"></div>
+        <div class="circle circle-yellow"></div>
+        <div class="circle circle-green"></div>
+    </div>
     </div>
   </div>
       
-    
+    <script type="text/javascript" src="traficjavascript/modifiedTrafficController.js"></script>
 </body>
 </html>

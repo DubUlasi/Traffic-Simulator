@@ -387,7 +387,6 @@ body {
   background-color: #272727;
 }
 
-
 /* Rules for the wrapper enclosing the environment */
 #environment-wrapper {
   height: 100vh;
@@ -471,8 +470,110 @@ body {
   width: 50%;
   height: 40%;
   background-color: #272727;
-  border: 10px solid #D9D9D9;
+  border: 7px solid #D9D9D9;
 }
+
+/* design of the intersection box lines*/
+.intersectionline1{
+  position: absolute;
+  top: 60%;
+  left: 13%;
+  width: 1%;
+  height: 49%;
+  background-color: #D9D9D9;
+  transform: rotate(130.3deg);
+}
+
+.intersectionline2{
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  width: 1%;
+  height: 104.5%;
+  background-color: #D9D9D9;
+  transform: rotate(129.3deg);
+}
+
+.intersectionline3{
+  position: absolute;
+  top: -32.5%;
+  left: 48.8%;
+  width: 1%;
+  height: 163.5%;
+  background-color: #D9D9D9;
+  transform: rotate(128.3deg);
+}
+
+.intersectionline4{
+  position: absolute;
+  top: -21.5%;
+  left: 68%;
+  width: 1%;
+  height: 108%;
+  background-color: #D9D9D9;
+  transform: rotate(129.3deg);
+}
+
+.intersectionline5{
+  position: absolute;
+  top: -11%;
+  left: 85%;
+  width: 1%;
+  height: 51%;
+  background-color: #D9D9D9;
+  transform: rotate(129deg);
+}
+
+.intersectionline6{
+  position: absolute;
+  top: -13%;
+  left: 16.8%;
+  width: 1%;
+  height: 59.9%;
+  background-color: #D9D9D9;
+  transform: rotate(52.5deg);
+}
+
+.intersectionline7{
+  position: absolute;
+  top: -21.7%;
+  left: 32%;
+  width: 1%;
+  height: 109%;
+  background-color: #D9D9D9;
+  transform: rotate(52deg);
+}
+
+.intersectionline8{
+  position: absolute;
+  top: -31%;
+  left: 49%;
+  width: 1%;
+  height: 163.5%;
+  background-color: #D9D9D9;
+  transform: rotate(51.6deg);
+}
+
+.intersectionline9{
+  position: absolute;
+  top: 11%;
+  left: 65.2%;
+  width: 1%;
+  height: 112%;
+  background-color: #D9D9D9;
+  transform: rotate(52deg);
+}
+
+.intersectionline10{
+  position: absolute;
+  top: 54%;
+  left: 81%;
+  width: 1%;
+  height: 58%;
+  background-color: #D9D9D9;
+  transform: rotate(53deg);
+}
+
 
 
 /* Top Road Divider */
@@ -870,3 +971,5 @@ body {
   height: 5%;
   background-color: #D9D9D9;
 }
+
+
