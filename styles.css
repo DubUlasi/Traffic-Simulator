@@ -1,0 +1,43 @@
+
+
+
+
+  
+  #car {
+    width: 10px;
+    height: 10px;
+    position:relative;
+    top: 175px;
+    animation: carMove 15s linear infinite;
+  }
+  #car img{
+    width:50px;
+  }
+  #car2{
+    margin-top: 25%;
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    top: 175px;
+    left: 50px;
+    animation: carMove 17s linear infinite;
+  }
+
+  #car3{
+    margin-left: 40%;
+    width: 100px;
+    height: 20px;
+    position: fixed;
+    top: -30px;
+    left: 50px;
+    animation: carmovetop 10s linear infinite;
+  }
+  
+  @keyframes carmovetop{
+    0%{top:0;}
+    100%{top:100vw}
+    400%{top:10;}
+  }
+
+  
+ 

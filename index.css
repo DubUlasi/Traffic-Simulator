@@ -4,6 +4,383 @@
   box-sizing: border-box;
 }
 
+#car {
+  margin-top: 18%;
+  margin-left:95%;
+  position:relative;
+  top: 175px;
+  animation: carMove 15s linear infinite;
+}
+#car img{
+  width:80px;
+}
+
+@keyframes carMove {
+  0% { right: 0; }
+  100% { right: 55vw; }
+  250% { right: 10; }
+}
+
+#car3{
+  margin-top:2%;
+  margin-left: 40%;
+  position: fixed;
+  top: -30px;
+  left: 50px;
+  animation: carmovetop 10s linear infinite;
+}
+
+#car3 img{
+  width:60px;
+}
+
+@keyframes carmovetop{
+  0%{top:0;}
+  100%{top:100vw}
+  400%{top:10;}
+}
+
+#car2{
+  margin-left:50%;
+  margin-top: 75.7%;
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  top: 175px;
+  left: 50px;
+  animation: carmoveUp 15s linear infinite;
+}
+
+#car2 img{
+  width:80px;
+}
+@keyframes carmoveUp{
+  0%{top:0;}
+  100%{top:-100vw}
+  700%{top:-10;}
+}
+
+#car4{
+  margin-left: 40%;
+  margin-top:2%;
+  position:absolute;
+  top: -30px;
+  left: 50px;
+  animation: moveStraight 10s ease-in infinite;
+}
+#car4 img{
+  width:80px;
+}
+
+
+
+@keyframes moveStraight {
+ 
+  0% {
+    top:1px
+  }
+  2% {
+    top:2%;
+  }
+  4% {
+    top:4%;
+  }
+  6% {
+    top:6%;
+  }
+  8% {
+    top:8%;
+  }
+  10% {
+    top:10%;
+  }
+  12% {
+    top:12%;
+  }
+  14% {
+    top:14%;
+   }
+  16%{
+  top: 16%;
+  
+  
+  }
+  18%{
+  top:18%;
+  
+ 
+  }
+  20%{
+  top: 20%;
+
+  }
+  22%{
+  top: 22%;
+
+  }
+  24%{
+  top:24%;
+
+  }
+  26%{
+  top:26%;
+  left:5%;
+  transform: rotate(-5deg);
+  }
+  28%{
+  top:28%;
+  left:6%;
+  transform: rotate(-10deg);
+  }
+  30%{
+  top:30%;
+  left:7%;
+  transform: rotate(-15deg);
+  }
+  32%{
+  top:32%;
+  left:8%;
+  transform: rotate(-20deg);
+  }
+  34%{
+  top:34%;
+  left:9%;
+  transform: rotate(-25deg);
+  }
+  36%{
+  top:36%;
+  left:10%;
+  transform: rotate(-30deg);
+  }
+  38%{
+  top:38%;
+  left:11%;
+  transform: rotate(-35deg);
+  }
+  40%{
+  top:40%;
+  left:12%;
+  transform: rotate(-40deg);
+  }
+  42%{
+  top:42%;
+  left:14%;
+  transform: rotate(-45deg);
+  }
+  44%{
+  top:44%;
+  left:16%;
+  transform: rotate(-50deg);
+  }
+  46%{
+  top:46%;
+  left:18%;
+  transform: rotate(-55deg);
+  }
+  48%{
+  top:48%;
+  left:20%;
+  transform: rotate(-60deg);
+  }
+  
+  
+ 
+  90%{
+  top:50%;
+  left:30%;
+  transform: rotate(-90deg);
+  }
+ 
+  100%{
+  top:50%;
+  left:60%;
+  transform: rotate(-90deg);
+  }
+  
+
+}
+
+#car5{
+  margin-left: 92%;
+  margin-top:5%;
+  position:absolute;
+  animation: moveright 10s ease-in infinite;
+}
+#car5 img{
+  width:100px;
+}
+
+
+@keyframes moveright{
+  0% {
+     right: 0; }
+  1% {
+     right: 1%; }
+  2% { 
+    right: 2%;}
+  3% {
+     right: 3%;}
+  4% { 
+    right: 4%;}
+  5% {
+     right:5%;}
+  6% {
+     right:6%;}
+  7% {
+   right:7%;
+  }
+  8%{
+    transform: rotate(5deg);
+    top:24.7%;
+    right:8%;
+  }
+  9%{
+    transform: rotate(10deg);
+    top:24.6%;
+    right:9%;
+  }
+  10%{
+    transform: rotate(15deg);
+    top:24.5%;
+    right:10%;
+  }
+  11%{
+    transform: rotate(20deg);
+    top:24.4%;
+    right:11%;
+  }
+
+  12%{
+    transform: rotate(25deg);
+    top:24.3%;
+    right:12%;
+  }
+  13%{
+    transform: rotate(30deg);
+    top:24.2%;
+    right:13%;
+  }
+  14%{
+    transform: rotate(40deg);
+    top:24.1%;
+    right:14%;
+  }
+  15%{
+    transform: rotate(50deg);
+    top:24.0%;
+    right:15%;
+  }
+  16%{
+    transform: rotate(60deg);
+    top:23.9%;
+    right:16%;
+  }
+  17%{
+    transform: rotate(66deg);
+    top:23.5%;
+    right:17%;
+  }
+  18%{
+    transform: rotate(80deg);
+    top:23.1%;
+    right:18%;
+  }
+  100%{
+    transform: rotate(90deg);
+    top:-1vw;
+    right:19%;
+  }
+ 
+}
+
+#car6{
+  margin-top:-23%;
+  margin-left:23%;
+  position:absolute;
+  animation: moveleft 10s ease-in infinite;
+}
+#car6 img{
+  width:40px;
+}
+
+@keyframes moveleft {
+ 
+
+  0% {
+    top: 0; }
+ 10% {
+    top: 10%; }
+ 12% { 
+    top: 12%;}
+ 14% {
+  top: 14%;}
+ 16% { 
+  top: 16%;}
+ 18% {
+    top:18%;}
+ 20% {
+    top:20%;}
+ 22% {
+    top:22%;}
+ 24% {
+    top:24%;}
+ 26% {
+    top:26%;}
+ 28% {
+    top:28%;}
+ 30% {
+    top:30%;}
+ 32% {
+    top:32%;}
+ 34% {
+    top:34%;}
+ 36% {
+    top:36%;}
+ 38% {
+    top:38%;}
+ 40% {
+    transform:rotate(5deg);
+    top:40%;}
+ 42% {
+    transform:rotate(10deg);
+    top:42%;}
+ 44% {
+    transform:rotate(15deg);
+    top:44%;}
+ 46% {
+    transform:rotate(25deg);
+    top:46%;}
+ 48% {
+    transform:rotate(30deg);
+   
+    top:46%;}
+ 50% {
+    transform:rotate(35deg);
+
+    top:46%;}
+ 60% {
+    transform:rotate(40deg);
+ 
+    top:46%;}
+ 70% {
+    transform:rotate(45deg);
+    
+    top:46%;}
+ 70% {
+    transform:rotate(50deg);
+    
+    top:46%;}
+
+
+   
+
+}
+
+
+
+
+
+
 
 /* Background of the entire design */
 body {
